@@ -1,15 +1,13 @@
 import java.util.ArrayList;
 
-public class Zombie {
+public class Zombie extends Monster {
 
     String name;
     int health;
     String speed;
 
-    Zombie(String name, int health, String speed) {
-        this.name = name;
-        this.health = health;
-        this.speed = speed;
+    Zombie(String name, int health, int numOfMonsters, boolean dead) {
+        super(name, health, numOfMonsters, dead);
     }
 
     public void setName(String name) {
