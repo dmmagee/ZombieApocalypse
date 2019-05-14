@@ -72,19 +72,31 @@ class Monster {
         System.out.println("You can call me Monster " + name + " if you're nice!");
     }
 
-
     public static void main(String[] args) {
-
         //Test your monster object before moving on
         //create a monster1 object and set it's name
+        Monster monster1 = new Monster("Steve", 42, 42, false);
         //make it tell you who it is
+        monster1.sayName();
         //set the monster's health and check to see if it was set
+        monster1.setHealth(42);
+        monster1.getHealth();
         //how many monsters have been created?
+        System.out.println(monster1.numOfMonsters + " have been created...");
         //create a monster2 object
+        Monster monster2 = new Monster("Jerry" ,42,42,false);
         //how many monsters have been created?
+
+        System.out.println(monster2.numOfMonsters + " have been created...");
         //make monster1 attack monster 2
+        monster1.attack(monster2, 12);
         //check to see if monster 2 is alive
+        monster2.isDead();
         //if it is, attack it again until it's dead
+        while (!monster2.isDead()) {
+            monster1.attack(monster2, 12);
+        }
         //how many monsters are left?
+        System.out.println(monster2.numOfMonsters + " are left...");
     }
 }
